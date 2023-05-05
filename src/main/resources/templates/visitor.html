@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<link rel="stylesheet"
+
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+
+crossorigin="anonymous">
+
+<link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs9SMUZFPBMwAxJazGU3nx4Qz7zphhPSIl_MJoZO_3Pd4KrtvWaC05e5orNmIx_tvO-j4&usqp=CAU" type="image/x-icon">
+
+<title>VISITOR FORM</title>
+
+<link rel="shortcut icon" href="http://localhost:8080/images/login.png" type="image/x-icon">
+
+<style>
+
+	body{
+
+		background-image:url("https://img.freepik.com/free-vector/watercolor-abstract-purple-background_23-2149120778.jpg?w=2000");
+
+		height:100%;
+
+        background-position:center;
+
+        background-repeat:no-repeat;
+
+        background-size:cover;
+
+    }
+
+    html{
+
+    height:100%;}
+
+    input.transparent-input{
+
+       background-color:rgba(0,0,0,0) !important;
+
+       border-color:black;
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+	<form action="/validateVisitor" modelAttribute="adj" method="post">
+
+		<div class="container ">
+
+			<div class="row mt-3" style=justify-content:center;background-color:transparent>
+
+				<h1 align="center">VISITOR VALIDATION</h1>
+
+			</div><br>
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-lg-6 col-md-3 container justify-content-center card" style=background-color:transparent>
+
+						<div class="card-body">
+
+							<div class="form-group">
+
+								<label>STUDENT ID</label>
+
+								<input type="text" name="studentId" class="form-control transparent-input" placeholder="enter the student Id" required="required"/>
+
+							</div>
+
+							<div class="form-group">
+
+								<label>STUDENT NAME</label>
+
+								<input type="text" name="studentName" class="form-control transparent-input" placeholder="enter the student Name" required="required"/>
+
+							</div>
+
+							<div class="form-group">
+
+								<label>VISITOR NAME</label>
+
+								<input type="text" name="visitorName1" class="form-control  transparent-input" placeholder="enter the visitor Name" required="required"/>
+
+							</div>
+
+							<div class="footer-body" style="text-align:center">
+
+								<button type="submit" class="btn btn-primary float-left" >Proceed</button>
+
+								<a href="/home" class="btn btn-secondary float-right">Back</a>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</form>
+
+	<h3 align="center">[[${message}]]</h3>
+
+</body>
+
+</html>

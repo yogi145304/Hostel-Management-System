@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+
+<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Avatar_icon_green.svg/768px-Avatar_icon_green.svg.png" type="image/x-icon">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+
+<title>Home Page</title>
+<style>
+body{
+background-image:url("https://media.istockphoto.com/id/1353553203/photo/forest-wooden-table-background-summer-sunny-meadow-with-green-grass-forest-trees-background.jpg?b=1&s=170667a&w=0&k=20&c=-jvR1WDwcloLXRgRTGeyG3frvrhPIbegdemeL6vY2Pk=");
+height:100%;
+background-position:center;
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+html{
+height:100%;}
+
+</style>
+</head>
+<body>
+<form action="/validate" modelAttribute="admin" method="POST">
+	<div class="container">
+		<div class="row">
+			<br>
+		</div>
+    	<div class="row" style=justify-content:center;font-family:serif><br> 
+    		<h1 align="center">Admin Login</h1>
+   		</div><br>
+    	<div class="row">
+    		<br>
+    	</div><br>
+    </div>
+<div class="container">
+    <div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card" style=background-color:#b1dd52;font-family:serif><!-- #C5E17A #b1dd52 -->
+			<div class="card-body" >
+					<div class="form-group">
+						<label>User ID</label>
+						<input type="text" name="userId" 
+							class="form-control" placeholder="Enter User ID" required/>
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" name="password" 
+							class="form-control" placeholder="Enter Password" required/>
+					</div>
+ 					<div class="footer-body">
+						<button class="btn btn-primary btn-lg mb-3 text-center float-middle">Login</button>
+					</div>
+			</div>
+		</div>
+	</div>   
+</div>
+</div>
+</form>
+<br>
+<h2 align="center" style="color:maroon;">[[${message}]]</h2>
+</body>
+</html>

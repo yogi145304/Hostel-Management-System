@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Logout</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- https://icons8.com/icon/TmshBLOFvt3H/logout-rounded-->
+
+<style>
+
+body{
+
+background-image:url("https://i.pinimg.com/originals/8c/37/91/8c379172a4230490d8614c58066332b5.png");
+
+/* height:100%; */
+
+
+background-position:center;
+
+
+background-repeat:no-repeat;
+
+
+background-size:cover;
+
+
+}
+
+
+html{
+
+
+height:100%;}
+
+</style>
+
+
+</head>
+
+<body style=text-align:center;font-family:serif class="position-absolute top-50 start-50 translate-middle">
+
+
+<form action="/logout">
+
+<h1 style=color:green >Logged Out Successfully</h1><br><br>
+
+<h2>Click here to login</h2>
+
+<a th:href="@{/adminLogin}" class="btn btn-primary btn-sm mb-3">Login</a>
+
+
+</form>
+
+</body>
+
+</html>

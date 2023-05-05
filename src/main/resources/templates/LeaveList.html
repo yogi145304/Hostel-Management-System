@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<link rel="stylesheet" 
+
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+
+crossorigin="anonymous">
+
+
+
+<link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_NT2RyqD7LmgU-HtPqYMr0YK4VRapdVvQmw&usqp=CAU" type="image/x-icon">
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+
+<title>Leave List</title>
+
+<style>
+
+body{
+
+
+
+background-image:url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000");
+
+height:100%;
+
+
+
+/* background-position:center;
+
+
+
+background-repeat:no-repeat;
+
+
+
+background-size:cover;
+
+ */
+
+}
+
+
+
+html{
+
+
+
+height:100%;}
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+<form action="/LeaveList" method="POST">
+
+
+
+	<div class="container">
+
+	
+
+		<div class="row">
+
+			<br>
+
+		</div>
+
+	
+
+    	<div class="row" style=justify-content:center;font-family:serif><br> 
+
+    		<h1 align="center">Leave List</h1>
+
+   		</div><br>
+
+    
+
+    </div>
+
+    
+
+    <div class="container" style=justify-content:center;font-family:serif>
+
+    	<div class="row">
+
+    		<div class="col-lg-12">
+
+    			
+
+    				<div align="center">
+
+   
+
+
+    					<a href="/home" class="btn btn-dark btn-lg mb-3 text-center float-right">Back</a>
+
+    			
+
+    					
+
+    				</div>
+
+    		</div>
+
+    	</div>	
+
+    	
+
+  			
+
+    </div>
+
+    <br>
+
+    
+
+<div class="container">
+
+    <div class="row">
+
+    	<div class="col-lg-12">
+
+		<!-- <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card" style=font-family:serif> -->
+
+			<table class="table table-striped table-bordered" style=justify-content:center;>
+
+        <thead class="table-dark" align="center">
+
+            <tr>
+
+            	<th>STUDENT ID</th>
+
+                <th>STUDENT NAME</th>
+
+                <th>ROOM NUMBER</th>
+
+                <th>Leaving Date</th>
+
+                <th>Return Date</th>
+
+                <th>CONTACT NUMBER</th>
+
+                <th>Reason for leave</th>
+
+                <th>ACTION</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="studentLeave:${StudentLeave}">
+
+        	<td th:text="${studentLeave.studentId}"></td>
+
+        	<td th:text="${studentLeave.studentName}"></td>
+
+        	<td th:text="${studentLeave.roomNumber}"></td>
+
+        	<td th:text="${studentLeave.leavingDate}"></td>
+
+        	<td th:text="${studentLeave.returnDate}"></td>
+
+        	<td th:text="${studentLeave.contactNumber}"></td>
+
+        	<td th:text="${studentLeave.Reason}"></td>
+
+
+        	<td>
+
+        		<span align="center">
+
+        			<a th:href="@{/deleteLeave/{id} (id=${studentLeave.studentId})}"> <i class="material-icons float-right" style="font-size:30px; color:red;">delete</i> </a>
+
+        		</span>
+
+        	</td>
+
+        </tr>
+
+        	
+
+        </tbody>
+
+    </table>
+
+		</div>
+
+	</div>   
+
+</div>
+
+
+
+</form>
+
+<br>
+
+</body>
+
+</html>
